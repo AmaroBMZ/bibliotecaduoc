@@ -25,8 +25,8 @@ public class LibroService {
         return libroRepository.actualizar(lib);
     }
 
-    public void delete (int id){
-        libroRepository.eliminar(id);
+    public boolean deleteLibro (int id){
+        return libroRepository.eliminarLibro(id);
     }
 
     public Libro readId(int id){
@@ -35,5 +35,17 @@ public class LibroService {
 
     public Libro readIsbn(String isbn){
         return libroRepository.buscarIsbn(isbn);
+    }
+
+    public void datosFake(){
+        libroRepository.cargarLibrosFake();
+    }
+
+    public Libro updateLibro(int id, Libro libro) {
+        return libroRepository.modificarLibro(id, libro);
+    }
+
+    public List<Libro> getMayores(int year) {
+        return libroRepository.getMayores(year);
     }
 }
